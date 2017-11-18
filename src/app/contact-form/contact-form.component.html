@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit();">
+  <div>
+    <label>Username:</label>
+    <input type="text" formControlName="username" required>
+  </div>
+  <p *ngIf="form.controls.username.touched">Username is required</p>
+  <br>
+  <div>
+    <label>Password:</label>
+    <input type="password" formControlName="password" required>
+  </div>
+  <br>
+  <button [disabled]="form.invalid">button</button>
+</form>
+<p>{{ form.errors | json }}</p>
